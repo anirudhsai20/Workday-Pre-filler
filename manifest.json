@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Prefiller",
+  "version": "4.0",
+  "description": "Automatically fills Workday job application forms using your saved data.",
+  "author": "Anirudh Sai S B",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Fill Workday Application"
+  },
+  "host_permissions": [
+  "*://workday.wd5.myworkdayjobs.com/*"
+],
+  "options_page": "options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

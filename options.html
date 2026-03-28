@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Workday Job Application Autofill Options</title>
+  <style>
+    body {
+       font-family: Arial, sans-serif;
+       padding: 20px;
+       max-width: 480px;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"], input[type="email"], input[type="password"],  input[type="tel"], input[type="number"], textarea, select, input[type="file"] {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    textarea:focus,
+    select:focus,
+    input[type="file"]:focus {
+      border-color: #1976d2;
+      outline: none;
+    }
+    input[type="checkbox"] {
+      margin-top: 12px;
+      transform: scale(1.2);
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .work-experience-section {
+      margin-top: 32px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #222;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 4px;
+    }
+    button {
+      font-size: 18px;
+      padding: 12px 36px;
+      border-radius: 36px;
+      border: none;
+      background-color: #1976d2;
+      color: white;
+      cursor: pointer;
+      margin-top: 24px;
+      width: 100%;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #125a9a;
+    }
+    #status {
+      margin-top: 18px;
+      font-size: 16px;
+      color: green;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Workday Job Application Autofill Options</h2>
+  <form id="userForm">
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" />
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" autocomplete="off"/>
+
+    <label for="verifyPassword">Verify Password:</label>
+    <input type="text" id="verifyPassword" autocomplete="off" readonly/>
+
+    <label for="firstName">Check if you agree with the terms and conditions of Workday and the company that you are applying to:</label>
+    <input type="checkbox" data-automation-id="createAccountCheckbox">
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" />
+
+    <label for="middleName">Middle Name:</label>
+    <input type="text" id="middleName" />
+
+    <label for="middleNameLocal">Middle Name (Local):</label>
+    <input type="text" id="middleNameLocal" />
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" />
+
+    <label for="lastNameLocal">Last Name (Local):</label>
+    <input type="text" id="lastNameLocal" />
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" />
+
+    <label for="phoneType">Phone Type:</label>
+    <select id="phoneType">
+      <option value="mobile">Mobile</option>
+      <option value="home">Home</option>
+      <option value="landline">Landline</option>
+    </select>
+
+    <label for="addressLine1">Address Line 1:</label>
+    <input type="text" id="addressLine1" />
+
+    <label for="city">City:</label>
+    <input type="text" id="city" />
+
+    <label for="postalCode">Postal Code:</label>
+    <input type="text" id="postalCode" />
+
+    <!-- Add this to your options.html after the address/city/postalCode fields -->
+
+<div>
+  <h3>Address - State/Province</h3>
+  <label for="stateIndia">State (India):</label>
+  <select id="stateIndia">
+    <option value="">Select State</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunāchal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihār">Bihar</option>
+    <option value="Chandīgarh">Chandigarh</option>
+    <option value="Chhattīsgarh">Chhattisgarh</option>
+    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+    <option value="Dādra and Nagar Haveli and Damān and Diu">Dādra and Nagar Haveli and Damān and Diu</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Jammu and Kashmīr">Jammu and Kashmir</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarāt">Gujarat</option>
+    <option value="Haryāna">Haryana</option>
+    <option value="Himāchal Pradesh">Himachal Pradesh</option>
+    <option value="Jhārkhand">Jharkhand</option>
+    <option value="Karnātaka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Ladākh">Ladakh</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Mahārāshtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghālaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nāgāland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Puducherry (Pondicherry)">Puducherry (Pondicherry)</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rājasthān">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nādu">Tamil Nadu</option>
+    <option value="Telangāna">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarākhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+  </select>
+</div>
+
+    <label style="margin-top: 24px; font-size: 18px;">Worked For This Company Before?</label>
+    <label style="display: inline-block; margin-right: 16px;">
+      <input type="radio" name="workedForWorkday" value="Yes" /> Yes
+    </label>
+    <label style="display: inline-block;">
+      <input type="radio" name="workedForWorkday" value="No" /> No
+    </label>
+
+    <div class="work-experience-section">
+  <h3>How did you hear about this job?</h3>
+  <label for="hearAboutSource">Select one:</label>
+  <select id="hearAboutSource" style="margin-top: 6px;">
+    <option value="">Select one…</option>
+    <option value="LinkedIn">LinkedIn</option>
+    <option value="Glassdoor">Glassdoor</option>
+    <option value="Naukri">Naukri</option>
+    <option value="Indeed">Indeed</option>
+    <option value="Handshake">Handshake</option>
+    <option value="Twitter/X">Twitter/X</option>
+    <option value="Google search">Google search</option>
+    <option value="Company website">Company website</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Facebook">Facebook</option>
+    <option value="Tik Tok">Tik Tok</option>
+    <option value="Other">Other</option>
+  </select>
+  <div style="font-size: 13px; color: #555; margin-top: 4px;">
+    Choice here will be used to auto‑select the matching Workday dropdown option.
+  </div>
+</div>
+
+
+    <!-- Work Experience Sections -->
+    <div class="work-experience-section">
+      <h3>Work Experience 1</h3>
+      <label for="jobTitle1">Job Title:</label>
+      <input type="text" id="jobTitle1" />
+      <label for="company1">Company:</label>
+      <input type="text" id="company1" />
+      <label for="location1">Location:</label>
+      <input type="text" id="location1" />
+      <label><input type="checkbox" id="current1" name="current1" /> I currently work here</label>
+      <label for="from1">From (MM/YYYY):</label>
+      <input type="text" id="from1" placeholder="MM/YYYY" />
+      <label for="to1">To (MM/YYYY):</label>
+      <input type="text" id="to1" placeholder="MM/YYYY" />
+      <label for="desc1">Role Description:</label>
+      <textarea id="desc1" rows="3"></textarea>
+    </div>
+
+    <div class="work-experience-section">
+      <h3>Work Experience 2</h3>
+      <label for="jobTitle2">Job Title:</label>
+      <input type="text" id="jobTitle2" />
+      <label for="company2">Company:</label>
+      <input type="text" id="company2" />
+      <label for="location2">Location:</label>
+      <input type="text" id="location2" />
+      <label><input type="checkbox" id="current2" name="current2" /> I currently work here</label>
+      <label for="from2">From (MM/YYYY):</label>
+      <input type="text" id="from2" placeholder="MM/YYYY" />
+      <label for="to2">To (MM/YYYY):</label>
+      <input type="text" id="to2" placeholder="MM/YYYY" />
+      <label for="desc2">Role Description:</label>
+      <textarea id="desc2" rows="3"></textarea>
+    </div>
+
+    <div class="work-experience-section">
+      <h3>Work Experience 3</h3>
+      <label for="jobTitle3">Job Title:</label>
+      <input type="text" id="jobTitle3" />
+      <label for="company3">Company:</label>
+      <input type="text" id="company3" />
+      <label for="location3">Location:</label>
+      <input type="text" id="location3" />
+      <label><input type="checkbox" id="current3" name="current3" /> I currently work here</label>
+      <label for="from3">From (MM/YYYY):</label>
+      <input type="text" id="from3" placeholder="MM/YYYY" />
+      <label for="to3">To (MM/YYYY):</label>
+      <input type="text" id="to3" placeholder="MM/YYYY" />
+      <label for="desc3">Role Description:</label>
+      <textarea id="desc3" rows="3"></textarea>
+    </div>
+
+    <div class="work-experience-section">
+
+  <div id="educationContainer">
+    <div>
+      <h3>Education 1</h3>
+      <label for="schoolName1">School or University</label>
+      <input type="text" id="schoolName1">
+
+      <!-- Education 1 Degree Dropdown - EXACT MATCH -->
+<label for="degree1">Degree</label>
+<select id="degree1">
+  <option value="">Select Degree</option>
+  <option value="High School or GED (+-11 years of education)">High School or GED (+-11 years of education)</option>
+  <option value="Technical Diploma (+-12 years of education)">Technical Diploma (+-12 years of education)</option>
+  <option value="Associates (+-13 years of education)">Associates (+-13 years of education)</option>
+  <option value="Bachelor of Arts">Bachelor of Arts</option>
+  <option value="Bachelor of Commerce">Bachelor of Commerce</option>
+  <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+  <option value="Bachelor of Science">Bachelor of Science</option>
+  <option value="Post Graduate Diploma">Post Graduate Diploma</option>
+  <option value="Master of Arts">Master of Arts</option>
+  <option value="Masters of Business Administration">Masters of Business Administration</option>
+  <option value="Master of Science">Master of Science</option>
+  <option value="Master of Public Policy">Master of Public Policy</option>
+  <option value="Doctor of Education">Doctor of Education</option>
+  <option value="Doctor of Philosophy">Doctor of Philosophy</option>
+  <option value="Other">Other</option>
+</select>
+
+<!-- Copy EXACT SAME BLOCK for degree2, degree3 - just change id="degree2", id="degree3" -->
+
+
+
+      <label for="gpa1">Overall GPA / CGPA:</label>
+      <input type="text" id="gpa1" placeholder="e.g. 9.12 or 3.85" />
+
+      <label class="form-label">From (MM/YYYY):</label>
+      <input type="text" id="fromEdu1" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+
+      <label class="form-label">To (MM/YYYY):</label>
+      <input type="text" id="toEdu1" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+    </div>
+    <div>
+      <h3>Education 2</h3>
+      <label for="schoolName2">School or University</label>
+      <input type="text" id="schoolName2">
+
+      <!-- Education 1 Degree Dropdown - EXACT MATCH -->
+<label for="degree2">Degree</label>
+<select id="degree2">
+  <option value="">Select Degree</option>
+  <option value="High School or GED (+-11 years of education)">High School or GED (+-11 years of education)</option>
+  <option value="Technical Diploma (+-12 years of education)">Technical Diploma (+-12 years of education)</option>
+  <option value="Associates (+-13 years of education)">Associates (+-13 years of education)</option>
+  <option value="Bachelor of Arts">Bachelor of Arts</option>
+  <option value="Bachelor of Commerce">Bachelor of Commerce</option>
+  <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+  <option value="Bachelor of Science">Bachelor of Science</option>
+  <option value="Post Graduate Diploma">Post Graduate Diploma</option>
+  <option value="Master of Arts">Master of Arts</option>
+  <option value="Masters of Business Administration">Masters of Business Administration</option>
+  <option value="Master of Science">Master of Science</option>
+  <option value="Master of Public Policy">Master of Public Policy</option>
+  <option value="Doctor of Education">Doctor of Education</option>
+  <option value="Doctor of Philosophy">Doctor of Philosophy</option>
+  <option value="Other">Other</option>
+</select>
+
+<!-- Copy EXACT SAME BLOCK for degree2, degree3 - just change id="degree2", id="degree3" -->
+
+
+
+      <label for="gpa2">Overall GPA / CGPA:</label>
+      <input type="text" id="gpa2" placeholder="e.g. 9.12 or 3.85" />
+
+      <label class="form-label">From (MM/YYYY):</label>
+      <input type="text" id="fromEdu2" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+
+      <label class="form-label">To (MM/YYYY):</label>
+      <input type="text" id="toEdu2" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+    </div>
+     <div>
+      <h3>Education 3</h3>
+      <label for="schoolName3">School or University</label>
+      <input type="text" id="schoolName3">
+
+      <!-- Education 1 Degree Dropdown - EXACT MATCH -->
+<label for="degree3">Degree</label>
+<select id="degree3">
+  <option value="">Select Degree</option>
+  <option value="High School or GED (+-11 years of education)">High School or GED (+-11 years of education)</option>
+  <option value="Technical Diploma (+-12 years of education)">Technical Diploma (+-12 years of education)</option>
+  <option value="Associates (+-13 years of education)">Associates (+-13 years of education)</option>
+  <option value="Bachelor of Arts">Bachelor of Arts</option>
+  <option value="Bachelor of Commerce">Bachelor of Commerce</option>
+  <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+  <option value="Bachelor of Science">Bachelor of Science</option>
+  <option value="Post Graduate Diploma">Post Graduate Diploma</option>
+  <option value="Master of Arts">Master of Arts</option>
+  <option value="Masters of Business Administration">Masters of Business Administration</option>
+  <option value="Master of Science">Master of Science</option>
+  <option value="Master of Public Policy">Master of Public Policy</option>
+  <option value="Doctor of Education">Doctor of Education</option>
+  <option value="Doctor of Philosophy">Doctor of Philosophy</option>
+  <option value="Other">Other</option>
+</select>
+
+<!-- Copy EXACT SAME BLOCK for degree2, degree3 - just change id="degree2", id="degree3" -->  
+
+
+      <label for="gpa3">Overall GPA / CGPA:</label>
+      <input type="text" id="gpa3" placeholder="e.g. 9.12 or 3.85" />
+
+      <label class="form-label">From (MM/YYYY):</label>
+      <input type="text" id="fromEdu3" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+
+      <label class="form-label">To (MM/YYYY):</label>
+      <input type="text" id="toEdu3" class="form-control" placeholder="MM/YYYY" pattern="\d{2}/\d{4}">
+    </div>
+  </div>
+</div>
+
+
+    <div class="work-experience-section">
+      <h3>Skills</h3>
+      <label for="skillsInput">Skills (comma-separated):</label>
+      <input type="text" id="skillsInput" placeholder="E.g. Python, JavaScript, React" />
+      <div style="font-size: 13px; color: #555; margin-top: 4px;">
+        Enter skills separated by commas. E.g. <i>Python, JavaScript</i>
+      </div>
+    </div>
+
+  <div class="section">
+        <h2>Languages</h2>
+        <div class="form-group">
+            <label for="languagesInput">Languages (comma-separated):</label>
+            <input type="text" id="languagesInput">
+            <small>Enter languages separated by commas. E.g. English, Hindi, Spanish</small>
+        </div>
+        <div class="form-group">
+            <label for="nativeLanguagesInput">I'm Fluent in these languages (comma-separated):</label>
+            <input type="text" id="nativeLanguagesInput">
+            <small>Enter languages that you are fluent in from the list above</small>
+        </div>
+        <div class="form-group">
+            <label for="comprehensionProficiency">Comprehension Proficiency (comma-separated):</label>
+            <input type="text" id="comprehensionProficiency">
+            <small>For each language: Beginner, Intermediate, Advanced, Fluent, Classroom Study</small>
+        </div>
+        <div class="form-group">
+            <label for="overallProficiency">Overall Proficiency (comma-separated):</label>
+            <input type="text" id="overallProficiency">
+            <small>For each language: Beginner, Intermediate, Advanced, Fluent, Classroom Study</small>
+        </div>
+        <div class="form-group">
+            <label for="readingProficiency">Reading Proficiency (comma-separated):</label>
+            <input type="text" id="readingProficiency">
+            <small>For each language: Beginner, Intermediate, Advanced, Fluent, Classroom Study</small>
+        </div>
+        <div class="form-group">
+            <label for="speakingProficiency">Speaking Proficiency (comma-separated):</label>
+            <input type="text" id="speakingProficiency">
+            <small>For each language: Beginner, Intermediate, Advanced, Fluent, Classroom Study</small>
+        </div>
+        <div class="form-group">
+            <label for="writingProficiency">Writing Proficiency (comma-separated):</label>
+            <input type="text" id="writingProficiency">
+            <small>For each language: Beginner, Intermediate, Advanced, Fluent, Classroom Study</small>
+        </div>
+    </div>
+
+
+    <div class="work-experience-section">
+      <h3>Resume Upload</h3>
+      <label for="resumeFile">Resume/CV File:</label>
+      <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" />
+      <div style="font-size: 13px; color: #555; margin-top: 4px;">
+        Select your resume PDF/DOC/DOCX. Will auto-upload to Workday.
+      </div>
+    </div>
+
+
+
+    <!-- Websites Section Start -->
+    <div class="work-experience-section">
+      <h3>Websites</h3>
+      <label for="website1">Website 1 URL:</label>
+      <input type="text" id="website1" placeholder="https://example1.com" />
+      <label for="website2">Website 2 URL:</label>
+      <input type="text" id="website2" placeholder="https://example2.com" />
+      <label for="website3">Website 3 URL:</label>
+      <input type="text" id="website3" placeholder="https://example3.com" />
+    </div>
+    <!-- Websites Section End -->
+
+    <!-- Social Networks Section Start -->
+    <div class="work-experience-section">
+      <h3>Social Networks</h3>
+      <label for="linkedInUrl">LinkedIn Profile URL:</label>
+      <input type="text" id="linkedInUrl" placeholder="https://linkedin.com/in/yourprofile" />
+      <label for="twitterUrl">Twitter/X Profile URL:</label>
+      <input type="text" id="twitterUrl" placeholder="https://twitter.com/yourhandle" />
+    </div>
+   <!-- Social Networks Section End -->
+
+   <div>
+    <label for="legalAuthorization" style="margin-top: 24px; font-size: 18px;">
+  Are you legally authorized to work in the job posting country?
+</label>
+<select id="legalAuthorization">
+  <option value="">Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+<label for="relocationPreference" style="margin-top: 24px; font-size: 18px;">
+  What is your relocation status for this role?
+</label>
+<select id="relocationPreference" name="relocationPreference">
+  <option value="">Select One</option>
+  <option value="I am local to where the job is posted">I am local to where the job is posted</option>
+  <option value="Yes, I would consider relocating for this role">Yes, I would consider relocating for this role</option>
+  <option value="No, I am not able to relocate for this role">No, I am not able to relocate for this role</option>
+</select>
+
+  <label for="visaSponsorship" style="margin-top: 24px; font-size: 18px;">
+    Do you now or in the future require visa sponsorship for employment?
+  </label>
+  <select id="visaSponsorship" name="visaSponsorship">
+    <option value="">Select One</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+
+  <!-- Gender selection -->
+  <label for="gender" style="margin-top: 24px; font-size: 18px;">
+   Select your gender
+  </label>
+  <select id="gender" name="gender">
+    <option value="">Select One</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Transgender (India)">Transgender (India)</option>
+    <option value="Gay">Gay</option>
+    <option value="Prefer Not To Disclose">Prefer Not To Disclose</option>
+  </select>
+
+  <label for="nonCompeteAgreement" style="margin-top: 24px; font-size: 18px;">
+  Are you subject to any non-compete or non-solicitation restrictions?
+</label>
+<select id="nonCompeteAgreement" name="nonCompeteAgreement">
+  <option value="">Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+<label for="exportControlCitizenship" style="margin-top: 24px; font-size: 18px;">
+    Are you a citizen or permanent resident of any restricted countries per U.S. Export Control laws?
+  </label>
+  <select id="exportControlCitizenship" name="exportControlCitizenship">
+    <option value="">Select One</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+
+  <label for="govEmploymentQuestion" style="margin-top: 24px; font-size: 18px;">
+    Within the past 5 years, have you been employed by a federal, state, local government or public institution?
+  </label>
+  <select id="govEmploymentQuestion" name="govEmploymentQuestion">
+    <option value="">Select One</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+
+  <label for="USGovEmploymentQuestion" style="margin-top: 24px; font-size: 18px;">
+  Are you a current or former employee of the United States government?
+</label>
+<select id="USGovEmploymentQuestion" name="USGovEmploymentQuestion">
+  <option value="">Select One</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+
+   </div>
+
+
+
+    <button type="submit">Save</button>
+    <div id="status"></div>
+  </form>
+
+  <script src="options.js"></script>
+</body>
+</html>
